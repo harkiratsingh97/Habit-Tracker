@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const env = require("./environment");
 //Creating a connection to MongoDB
 
-mongoose.connect(env.db);
+console.log(process.env.db)
+mongoose.connect(process.env.db);
+
 
 const db = mongoose.connection;
 

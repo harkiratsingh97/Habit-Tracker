@@ -1,0 +1,161 @@
+/* /css/home.css */
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #e1f0ff; /* Soft pastel blue */
+}
+
+.row {
+	margin: 0;
+	padding: 0;
+}
+
+#habit-tracker-container {
+	height: 100vh;
+	padding: 0;
+	min-width: 550px;
+	background-color: #ffffff94;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	overflow-y: scroll;
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+#habit-tracker-container::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+#habit-tracker-head {
+	background-color: #013770; /* Updated accent color */
+	padding: 5px;
+}
+
+#heading {
+	margin: 0;
+	text-align: center;
+	color: #fff;
+	font-size: 36px;
+	letter-spacing: 2px;
+}
+
+.habits {
+	/* line-height: 35px; */
+	background-color: #fff;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 0.3px black;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.habits:hover {
+	background-color: #f7f3f3;
+	/* transform: scale(1.02); */
+}
+
+.habits div {
+	text-align: center;
+}
+
+#habit-name {
+	text-align: left;
+	padding: 10px;
+	font-weight: bold;
+	color: #333;
+	font-size: 18px;
+}
+
+.col-2 a,
+.col-3 {
+	font-size: 15px;
+	text-decoration: none;
+	padding: 0;
+	color: #002e5f; /* Updated accent color */
+	transition: color 0.3s ease;
+}
+
+.col-2 a:hover,
+.col-3:hover {
+	color: #003366; /* Darker shade on hover */
+}
+
+.detailsInView {
+	height: fit-content;
+}
+.delete-habit-container {
+	padding: 3px;
+}
+#delete-habit-button {
+	background-color: rgba(155, 4, 4, 0.774);
+	color: white;
+	padding: 2px 5px;
+	text-decoration: none;
+	border-radius: 15px;
+}
+#delete-habit-button:hover {
+	box-shadow: 0px 2px 5px black;
+}
+
+.done-notDone{
+	cursor: pointer;
+}
+.done-notDone:hover{
+	text-shadow:0px 1px 0px #333;
+}
+/* Adjustments for better responsiveness on small screens */
+@media (max-width: 576px) {
+	#habit-name {
+		padding-left: 10px;
+		font-size: 16px;
+	}
+	.col-2 a,
+	.col-3 {
+		font-size: 14px;
+	}
+}
+
+#add-new-habit {
+	text-align: right;
+	float: right;
+	background-color: #e6e6e6;
+	border-radius: 9px;
+	width: fit-content;
+
+	padding: 1px;
+}
+#add-new-habit:hover {
+	background-color: rgb(250, 240, 228);
+	cursor: pointer;
+	box-shadow: 0px 2px 5px black;
+}
+
+/*Week view css*/
+.week-view div {
+	border: 1px solid;
+	position: relative;
+}
+#date-week-wise {
+	border: 0px;
+	position: absolute;
+	right: 3px;
+	top: -21px;
+}
+
+.habits-week-wise {
+	width: 14%;
+	padding: 0;
+	font-size: 12px;
+}
+
+.custom-select {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	-webkit-appearance: none;
+	transition: 0.1s ease-in-out;
+}
+
+.custom-select:hover {
+	border: 2px solid black;
+}

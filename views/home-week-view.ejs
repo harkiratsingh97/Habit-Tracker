@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/home.css" />
+
+<div class="row justify-content-center">
+	<div class="col-4" id="habit-tracker-container">
+		<div id="habit-tracker-head" class="row">
+			<h2 id="heading">Habit Tracker</h2>
+
+			
+			<a href="/">Detail View</a>
+		</div>
+		
+		<div id="habits-container" class="row">
+			<%if(habits.length==0){%>
+				<h4 class="mt-3" style="text-align: center;">No habits to track</h4>
+			<%}%>
+			<%for(habit of habits){%>
+			<div id="item-1" class="row habits">
+				<div class="row" style="line-height: normal;">
+					<div id="habit-name" class="col-7"><%=habit.name%></div>
+					
+				</div>
+				<div class="row justify-content-center week-view">
+					<%for(let i= habit.habitTracked.length-7; i<habit.habitTracked.length; i++){%>
+					<div class="col-1 habits-week-wise" ><div id="date-week-wise"><%=habit.habitTracked[i].date.getDate()%></div>
+						<!-- <%=habit.habitTracked[i].state%> -->
+						<select style="cursor: pointer;" class="custom-select" onchange="trackHabit('<%=habit.id%>', this.value,'<%=habit.habitTracked[i]._id%>' ,'<%=habit.habitTracked[i].date%>' )">
+							<option <%= habit.habitTracked[i].state === 'Done' ? 'selected' : '' %>>Done</option>
+							<option <%= habit.habitTracked[i].state === 'Not Done' ? 'selected' : '' %>>Not Done</option>
+							<option <%= habit.habitTracked[i].state === '-' ? 'selected' : '' %>>-</option>
+						  </select></div>
+					<%}%>
+					
+				</div>
+				<!-- <div class="col-3">Daily</div> -->
+			</div>
+			<%}%>
+		</div>
+		<!-- <div id="add-new-habit">+</div> -->
+	</div>
+</div>
+
+<script src="/js/home.js"></script>
